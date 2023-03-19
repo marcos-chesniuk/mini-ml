@@ -1,46 +1,49 @@
 import React from 'react';
-import getProducts from "../../services/Products";
-import getCategories from "../../services/Categories";
 import { useLoaderData } from 'react-router';
+import { getProducts } from "services/Products";
+import {getCategories, getDomainDiscovery} from "services/Categories";
+import ProductCard from 'components/ProductCard';
+import ProductCategories from 'components/ProductCategories';
+import 'styles/SearchResult.scss'
+import { Link } from 'react-router-dom';
 
-export async function loader ({ request, params }) {
+export async function loader ({ request }) {
     const url = new URL(request.url);
     const searchTerm = url.searchParams.get('search');
     const products = await getProducts(searchTerm)
-    const categories = await getCategories(searchTerm) || ['No se pudieron obtener las categorías']
+
+    let categories = [{ name: 'No se pudieron obtener las categorías' }];
+
+    const domainDiscovery = await getDomainDiscovery(searchTerm)
+    if (domainDiscovery && domainDiscovery.length > 0) {
+        const categoryId = domainDiscovery[0].category_id
+        categories = await getCategories(categoryId)
+    }
+
     return {products, categories}
 }
-const SearchResult = (props) => {
+
+const SearchResult = () => {
     const {products, categories} = useLoaderData()
     console.log(products)
-
-    function formatCategories() {
-        return <div>
-            {
-                categories.map((category) => category.name)
-                .map((value, index, arr) => {
-                    if (index === arr.length - 1) {
-                        return <strong key={value} >{ value }</strong>
-                    } else {
-                        return <span key={value} >{ value + ' > '} </span>
-                    }
-                })
-            }
-        </div>
-    }
+    console.log(categories)
 
     return (
         <div>
-            {formatCategories()}
-            { products &&
-                <ul>
-                    {products.map((item) => (
-                        <li key={item.id}>
-                            {item.title} {item.price}
-                        </li>
-                    ))}
-                </ul>
-            }
+            <ProductCategories categories={categories} />
+            <div className='products' >
+                { products &&
+                    <ul>
+                        {products.map((item) => (
+                            <div key={item.id} className='card-container'>
+                                <Link to={item.id} className='product-link' >
+                                    <ProductCard product={item} />
+                                </Link>
+                            </div>
+                        ))}
+                    </ul>
+                }
+            </div>
         </div>
     );
 };

@@ -3,8 +3,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
-import Home from './pages/Home/Home'
-import SearchResult, {loader as productLoader} from './pages/SearchResult/SearchResult'
+import Home from 'pages/Home/Home'
+import SearchResult, {loader as productsLoader} from 'pages/SearchResult/SearchResult'
+import ProductDetail, {loader as productLoader} from 'pages/ProductDetail/ProductDetail'
+import 'styles/App.scss'
 
 const router = createBrowserRouter([
   {
@@ -14,8 +16,13 @@ const router = createBrowserRouter([
       {
         path: "items",
         element: <SearchResult />,
-        loader: productLoader
+        loader: productsLoader,
       },
+      {
+        path: "items/:id",
+        element: <ProductDetail />,
+        loader: productLoader,
+      }
     ],
   },
 ]);
