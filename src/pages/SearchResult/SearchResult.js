@@ -25,8 +25,6 @@ export async function loader ({ request }) {
 
 const SearchResult = () => {
     const {products, categories} = useLoaderData()
-    console.log(products)
-    console.log(categories)
 
     return (
         <div>
