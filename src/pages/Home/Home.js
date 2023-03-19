@@ -1,13 +1,13 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import SearchBar from '../../components/SearchBar';
+import SearchBar from 'components/SearchBar';
+import 'styles/Home.scss'
 
 const Home = () => {
     return (
         <div>
             <SearchBar />
-            <h1>HOME</h1>
-            <div id='items'>
+            <div className='content'>
                 <Outlet />
             </div>
         </div>
