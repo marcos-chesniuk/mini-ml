@@ -1,5 +1,5 @@
 import React from 'react';
-import 'styles/ProductDescription.sass'
+import 'styles/ProductDescription.sass';
 
 const ProductDescription = ({ description }) => {
     return (

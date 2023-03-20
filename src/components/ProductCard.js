@@ -3,7 +3,7 @@ import ProductImagePreview from 'components/ProductImagePreview';
 import ProductPricePreview from 'components/ProductPricePreview';
 import ProductNamePreview from 'components/ProductNamePreview';
 import ProductLocationPreview from 'components/ProductLocationPreview';
-import 'styles/ProductCard.sass'
+import 'styles/ProductCard.sass';
 
 const ProductCard = ({product}) => {
     return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import 'styles/ProductNamePreview.sass'
+import 'styles/ProductNamePreview.sass';
 
 const ProductNamePreview = ({ name }) => {
     return (

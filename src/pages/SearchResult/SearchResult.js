@@ -4,7 +4,7 @@ import { getProducts } from "services/Products";
 import {getCategories, getDomainDiscovery} from "services/Categories";
 import ProductCard from 'components/ProductCard';
 import ProductCategories from 'components/ProductCategories';
-import 'styles/SearchResult.sass'
+import 'styles/SearchResult.sass';
 import { Link } from 'react-router-dom';
 import SEO from 'components/SEO';
 
@@ -14,21 +14,21 @@ export async function loader ({ request }) {
     
     if (!searchTerm) return redirect("/");
 
-    const products = await getProducts(searchTerm)
+    const products = await getProducts(searchTerm);
 
     let categories = [{ name: 'No se pudieron obtener las categorías' }];
 
-    const domainDiscovery = await getDomainDiscovery(searchTerm)
+    const domainDiscovery = await getDomainDiscovery(searchTerm);
     if (domainDiscovery && domainDiscovery.length > 0) {
-        const categoryId = domainDiscovery[0].category_id
-        categories = await getCategories(categoryId)
+        const categoryId = domainDiscovery[0].category_id;
+        categories = await getCategories(categoryId);
     }
 
-    return {searchTerm, products, categories}
+    return {searchTerm, products, categories};
 }
 
 const SearchResult = () => {
-    const {searchTerm, products, categories} = useLoaderData()
+    const {searchTerm, products, categories} = useLoaderData();
 
     return (
         <div>

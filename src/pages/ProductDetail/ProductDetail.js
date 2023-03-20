@@ -2,7 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router';
 import { getProduct, getProductDescription } from 'services/Products';
 import ProductCategories from 'components/ProductCategories';
-import 'styles/ProductDetail.sass'
+import 'styles/ProductDetail.sass';
 import { getCategories } from 'services/Categories';
 import ProductImage from 'components/ProductImage';
 import ProductSellInfo from 'components/ProductSellInfo';
@@ -12,13 +12,13 @@ import SEO from 'components/SEO';
 export async function loader ({ params }) {
     const product = await getProduct(params.id);
     const productDescription = await getProductDescription(params.id);
-    const categories = await getCategories(product.category_id)
+    const categories = await getCategories(product.category_id);
 
     return { product, productDescription, categories};
 }
 
 const ProductDetail = () => {
-    const {product, productDescription, categories} = useLoaderData()
+    const {product, productDescription, categories} = useLoaderData();
 
     return (
         <div>

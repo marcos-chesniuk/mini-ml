@@ -1,6 +1,6 @@
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
-import 'styles/ProductPricePreview.sass'
+import 'styles/ProductPricePreview.sass';
 
 const ProductPricePreview = ({price, freeShipping}) => {
     const useDecimal = !Number.isInteger(price);

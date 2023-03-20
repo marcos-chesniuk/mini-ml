@@ -1,5 +1,5 @@
 import React from 'react';
-import 'styles/ProductImage.sass'
+import 'styles/ProductImage.sass';
 
 const ProductImage = ({ url, alt }) => {
     return (
