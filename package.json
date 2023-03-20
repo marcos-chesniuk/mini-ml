@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "jest-watch-typeahead": "^0.6.5",
     "node-sass": "^8.0.0"
   }
 }
