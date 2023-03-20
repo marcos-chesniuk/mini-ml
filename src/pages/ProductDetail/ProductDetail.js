@@ -7,6 +7,7 @@ import { getCategories } from 'services/Categories';
 import ProductImage from 'components/ProductImage';
 import ProductSellInfo from 'components/ProductSellInfo';
 import ProductDescription from 'components/ProductDescription';
+import SEO from 'components/SEO';
 
 export async function loader ({ params }) {
     const product = await getProduct(params.id);
@@ -21,6 +22,12 @@ const ProductDetail = () => {
 
     return (
         <div>
+            <SEO
+                title={`${product.title} | MiniML`}
+                description={productDescription && productDescription.plain_text
+                    ? productDescription.plain_text
+                    : `Detalle del producto ${product.title}`}
+            />
             <ProductCategories categories={categories} />
             <div className='products-container'>
                 <div className='product-first-look'>

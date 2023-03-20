@@ -3,7 +3,7 @@
   "name": "Mini ML Test",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.21.22/mercadolibre/favicon.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
