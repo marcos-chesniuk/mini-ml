@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
-import { Form, Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Form, Link, useLocation, useNavigate } from "react-router-dom";
 import 'styles/SearchBar.sass'
 
 
 const SearchBar = ({ searchTerm }) => {
     const [searchInput, setsearchInput] = useState(searchTerm || '');
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    useEffect(() => {
+        if (!location.search) {
+            setsearchInput('')
+        } else {
+            setsearchInput(searchTerm)
+        }
+    }, [location, searchTerm]);
 
     const handleChange = (event) => {
         setsearchInput(event.target.value)
