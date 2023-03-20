@@ -1,0 +1,32 @@
+@import "colors", "sizes", "displays"
+
+.product-sell-info
+    @extend %flex-column
+    align-items: stretch
+    justify-content: flex-start
+    margin-right: $spacing-large
+
+.product-condition-ammount
+    font-size: $font-s
+    margin: $spacing-large 0 $spacing-small 0
+
+.product-title
+    font-size: $font-xl
+    font-weight: bold
+
+.product-price
+    font-size: $font-xxxl
+    font-weight: 400
+    margin: $spacing-large 0
+
+button.buy-button
+    font-size: $font-m
+    font-weight: 200
+    border-radius: 4px
+    background-color: $blue
+    color: white
+    border: none
+    height: 45px
+
+    &:hover
+        background-color: $dark-blue

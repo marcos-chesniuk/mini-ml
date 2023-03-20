@@ -1,0 +1,14 @@
+@import "sizes", "displays"
+
+.product-image-container
+    @extend %flex-center
+    min-width: $img-size
+    max-width: $img-size
+    min-height: $img-size
+    max-height: $img-size
+
+img.product-image
+    max-height: $img-size
+    max-width: $img-size
+    border-radius: 4px
+    margin: $spacing-small
