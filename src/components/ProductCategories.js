@@ -5,12 +5,11 @@ const ProductCategories = ({ categories }) => {
     function formatCategories() {
         return <div className='categories'>
             {
-                categories.map((category) => category.name)
-                .map((value, index, arr) => {
+                categories.map((category, index, arr) => {
                     if (index === arr.length - 1) {
-                        return <strong key={value} >{ value }</strong>
+                        return <strong key={category.id} >{ category.name }</strong>
                     } else {
-                        return <span key={value} >{ value + ' > '} </span>
+                        return <span key={category.id} >{ category.name + ' > '} </span>
                     }
                 })
             }
