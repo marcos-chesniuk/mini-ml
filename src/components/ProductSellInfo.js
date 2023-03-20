@@ -1,12 +1,12 @@
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
-import 'styles/ProductSellInfo.sass'
+import 'styles/ProductSellInfo.sass';
 
 const ProductSellInfo = ({ product }) => {
     const condition = {
         'new': 'Nuevo',
         'used': 'Usado'
-    }
+    };
 
     const useDecimal = !Number.isInteger(product.price);
 

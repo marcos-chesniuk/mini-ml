@@ -1,5 +1,5 @@
 import React from 'react';
-import 'styles/ProductCategories.sass'
+import 'styles/ProductCategories.sass';
 
 const ProductCategories = ({ categories }) => {
     function formatCategories() {
