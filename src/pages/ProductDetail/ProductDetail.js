@@ -4,16 +4,15 @@ import { getProduct, getProductDescription } from 'services/Products';
 import ProductCategories from 'components/ProductCategories';
 import 'styles/ProductDetail.scss'
 import { getCategories } from 'services/Categories';
+import ProductImage from 'components/ProductImage';
+import ProductSellInfo from 'components/ProductSellInfo';
+import ProductDescription from 'components/ProductDescription';
 
 export async function loader ({ params }) {
     const product = await getProduct(params.id);
     const productDescription = await getProductDescription(params.id);
-    
     const categories = await getCategories(product.category_id)
     
-    console.log(product)
-    console.log(productDescription)
-    console.log(categories)
     return { product, productDescription, categories};
 }
 
@@ -23,13 +22,12 @@ const ProductDetail = () => {
     return (
         <div>
             <ProductCategories categories={categories} />
-            <div className='product-container'>
-                <div>
-                    {product.title}
+            <div className='products-container'>
+                <div className='product-first-look'>
+                    <ProductImage url={product.pictures[0].url} alt={product.title} />
+                    <ProductSellInfo product={product} />
                 </div>
-                <div className='description-container'>
-                    {productDescription.plain_text}
-                </div>
+                <ProductDescription description={productDescription} />
             </div>
         </div>
     );

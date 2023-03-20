@@ -1,7 +1,10 @@
-.description-container {
-    white-space: pre-wrap;
+.products-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
-.product-container {
-    background-color: white;
+.product-first-look {
+    display: flex;
+    flex-direction: row;
 }
