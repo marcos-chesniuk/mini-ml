@@ -4,7 +4,7 @@ import { getProducts } from "services/Products";
 import {getCategories, getDomainDiscovery} from "services/Categories";
 import ProductCard from 'components/ProductCard';
 import ProductCategories from 'components/ProductCategories';
-import 'styles/SearchResult.scss'
+import 'styles/SearchResult.sass'
 import { Link } from 'react-router-dom';
 
 export async function loader ({ request }) {

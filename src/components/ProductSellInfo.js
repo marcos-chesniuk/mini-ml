@@ -1,6 +1,6 @@
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
-import 'styles/ProductSellInfo.scss'
+import 'styles/ProductSellInfo.sass'
 
 const ProductSellInfo = ({ product }) => {
     const condition = {
