@@ -1,5 +1,5 @@
 import React from 'react';
-import 'styles/ProductLocationPreview.scss';
+import 'styles/ProductLocationPreview.sass';
 
 const ProductLocationPreview = ({ city }) => {
     return (

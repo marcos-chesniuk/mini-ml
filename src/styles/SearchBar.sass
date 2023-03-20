@@ -1,0 +1,51 @@
+@import "colors", "sizes", "displays"
+
+.search-bar-container
+    @extend %flex-row
+    align-items: center
+    background-color: $yellow
+    height: 44px
+    padding: 0 160px
+
+    .logo
+        text-decoration: none
+        margin-right: 24px
+
+    Form
+        display: flex
+        width: 100%
+
+        .search-input
+            width: 100%
+            font-size: $font-l
+            color: $black
+            border-radius: 4px 0 0 4px
+            border: none
+            padding: 6px 6px
+
+            ::placeholder
+                color: $grey
+
+            &:focus
+                outline: none
+        
+            ::-ms-clear
+                display: none
+                width : 0
+                height: 0
+
+            ::-ms-reveal
+                display: none
+                width : 0
+                height: 0
+
+            ::-webkit-search-decoration, ::-webkit-search-cancel-button
+                display: none
+
+        button
+            @extend %flex-center
+            border-radius: 0 4px 4px 0
+            background-color: $light-grey
+            border: none
+            min-width: $spacing-large
+            min-height: $spacing-large

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, useLoaderData } from 'react-router';
 import SearchBar from 'components/SearchBar';
-import 'styles/Home.scss'
+import 'styles/Home.sass'
 
 export async function loader ({ request }) {
     const url = new URL(request.url);

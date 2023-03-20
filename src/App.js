@@ -6,7 +6,7 @@ import {
 import Home, {loader as homeLoader} from 'pages/Home/Home'
 import SearchResult, {loader as productsLoader} from 'pages/SearchResult/SearchResult'
 import ProductDetail, {loader as productLoader} from 'pages/ProductDetail/ProductDetail'
-import 'styles/App.scss'
+import 'styles/App.sass'
 
 const router = createBrowserRouter([
   {
